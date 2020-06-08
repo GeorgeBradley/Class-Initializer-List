@@ -20,6 +20,16 @@ public:
     {
 
     }
+    Product(std::string sInit) //One argument constructor
+        :Product(sInit, 0.0, 0) //Delegates to the three argument constructor
+    {
+
+    }
+    Product(std::string sInit, double dInit)
+        :Product (sInit, dInit, 0)
+    {
+
+    }
     Product() //Default constructor which delegates to the delegating constructor above
         : Product("", 0.0, 0) //initializer list
     {
@@ -27,9 +37,13 @@ public:
     }
 };
 
-   
 int main()
 {
-    std::cout << "Hello World!\n";
+    //Creating an instances of Product using overloaded constructors in the Product class
+
+    Product objProduct1; //This instance will call the default constructor with no arguments
+    Product objProduct2("Carpet"); //This instance will call the constructor with one argument
+    Product objProduct3("Corsair One", 7000);//This instance will call the constructor with two arguments
+    Product objProduct3("Umbrella", 9.3, 89); //This instance calls the constructor with three arguments
 }
 
