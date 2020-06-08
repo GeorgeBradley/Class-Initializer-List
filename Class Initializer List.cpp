@@ -13,8 +13,21 @@ private:
     int iProductQuantitySold;
 
 public:
+    //Overloaded constructors
+    //This will be the delegating constructor
+    Product(std::string sInit, double dInit, int iInit)
+        :sProductName(sInit), dProductPrice(dInit), iProductQuantitySold(iInit)
+    {
 
+    }
+    Product() //Default constructor which delegates to the delegating constructor above
+        : Product("", 0.0, 0) //initializer list
+    {
+
+    }
 };
+
+   
 int main()
 {
     std::cout << "Hello World!\n";
